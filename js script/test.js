@@ -1,88 +1,32 @@
-const points = [20,39,1,3,53,55];
-points.sort(function(a,b){
-    return a-b;
-});
-console.log(points);
+// const d = new Date();
+// console.time("test");
+// console.log(d);
+// document.write("Hello world<b>He is so great</b>");
+// console.error("this is our error");
+// console.warn("this is our journey to warn");
+// console.timeEnd("test");
 
-// array method
-//const numbers = [45,20,5,6,3];
+// function sleep(name,time){
+//   console.log(name + " get up at " + time);
+// }
+// sleep("jasim","10 pm");
+// sleep("karim","7 am");
+// var iAmParvez = true;
+// console.log(iAmParvez);
+// console.log(typeof(iAmParvez));
+//var myPhoneNumber = 394033;
+//var name = "parvez";
+//console.log(isNaN(myPhoneNumber));
+//console.log(isNaN(name));
 
+// postfix ------
+// var x = 8;
+// var y = x++ + 9;
+// console.log(y);
+// console.log(x);
 
-//function myFunction(value,index,array){
-   // console.log(value);
-   // console.log(index);
-   // console.log(array);
-   // console.log("-------------");
-//}
-
-//maping
-
-//numbers.forEach(myFunction);
-//function myFunction(value,index,array){
-  //  return value*2;
-//}
-
-
-
-
-//const newNumbers = numbers.map(myFunction);
-//console.log(newNumbers);
-
-//filter
-
-
-//function myFunction(value,index,array){
-   // return value > 10;
-//}
-
-
-
-
-//const newNumbers = numbers.filter(myFunction);
-//console.log(newNumbers);
-
-//reduce function
-
-//const numbers = [45,20,5,6,3];
-
-//function myFunction(total,value,index,array){
-  //  return total+ value;
-//}
-
-
-
-
-//const newNumbers = numbers.reduce(myFunction);
-//console.log(newNumbers);
-// array . every
-//const numbers = [45, 4, 9, 16, 25];
-//let allOver18 = numbers.every(myFunction);
-
-//function myFunction(value, index, array) {
-//  return value > 2;
-//}
-//const newNumbers = numbers.reduce(myFunction);
-//console.log(allOver18);
-
-
-//array some
-
-//const numbers = [45, 4, 9, 16, 25];
-//let allOver18 = numbers.some(myFunction);
-
-//function myFunction(value, index, array) {
- // return value > 25;
-//}
-//console.log(allOver18);
-
-// find array
-
-//const number = [45, 4, 9, 16, 25];
-//let allOver18 = array.from("abcdef");
-
-//function myFunction(value, index, array) {
- // return value > 5;
-//}
-//console.log(allOver18);
-console.log(Array.from("ABCDEFG")) ; 
-
+//prefix-----------
+var x = 8;
+var y = ++x;
+console.log(x);
+console.log(y);
