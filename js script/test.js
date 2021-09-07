@@ -1,45 +1,77 @@
-// functions in java script 
-//var a = 10;
-//var b = 39;
-//var sum = 10 + 39;
-//console.log(sum);
+// ----------------Modern javascript----------------------
 
-//--------functions with sum-------------
-// function sum(){
-//   var a =10;
-//   var b = 20;
-//   var total = a + b;
-//   console.log(total);
+// difference of var, let and const perents theke child e jabe let but child theke parents e jabena etai blockscope
+
+// function biodata(){
+//  let myFirstName = "parvez";
+//  console.log(myFirstName);
+
+//  if(true){
+//    let myLastName = "mahmud";
+//    console.log("inner "+myFirstName);
+//    console.log("inner "+myLastName);
+//  }
+//  console.log("inner outer "+myLastName);
 // }
-// var newExp = sum();
+// biodata();
 
+//-------------------template literal-------------
+//table of (8,9,10) with template literal
 
-
-//-------- function with two parameters--------------
-
-// function totalfunction(a,b){
-//   var sum = a + b;
-//   console.log(sum);
+// for(let num = 1; num <= 20; num++){
+//   let tableof = 8;
+//   console.log(`${tableof} * ${num} = ${tableof*num}`);
 // }
-// totalfunction(10,29);
 
-// function expression
+// ----------------------Default parameters of functions----
+// function mult(a,b=5){
+//   return a*b;
+// }
+// console.log(mult(3));
+//--------Fat arrow function-----------
 
-// function sum(a,b){
-
-//   return total = a + b;
+// const sum = () => {
+//   let a = 5; let b = 6;
   
+//   console.log(`the sum of 2 numbers are ${a + b}`);
 // }
-// var newExp = sum(45,5);
-// console.log(newExp);
-// console.log("the total number of a and b is"+ newExp);
+// sum();
 
-// Anonymous function expressions 
+// one line fat arrow function
 
-var AnoFunExp = function(a,b){
-  return total = a + b;
-}
-var sum = AnoFunExp(30,40);
-var sum1 = AnoFunExp(20,12);
-console.log("the sum two variables are"+ sum);
-console.log(sum<sum1);
+// const sum = () => `the sum of two numbers are ${(a = 5)+(b =6)}`;
+// console.log(sum());
+
+//-------- Array-------
+
+//let myFriends = ["parvez","mahmud","sohel","lila"];
+
+//console.log(myFriends.length);
+//console.log(myFriends[myFriends.length-1]);
+//for(i = 0; i < myFriends.length;i++){
+ // console.log(myFriends[i]);
+//}
+
+//-------------for in loop and for loop of---------------------
+//let myFriends = ["parvez","mahmud","sohel","lila"];
+// for(let khobis in myFriends){
+//   console.log(khobi);
+// }
+// for(let elements of myFriends){
+//   console.log(elements);
+// }
+
+
+// -----------for each loop----------
+
+// let myFriends = ["parvez","mahmud","sohel","lila"];
+// myFriends.forEach(function(element,index,array){
+//   console.log(element+"index "+index+"array "+array)
+// })
+
+//forEach loop with Fat arrow function
+let myFriends = ["parvez","mahmud","sohel","lila"];
+myFriends.forEach((element,index,array) =>
+console.log(element+"index "+index+"array "+array)
+
+)
