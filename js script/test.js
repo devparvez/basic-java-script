@@ -1,101 +1,63 @@
-//---------------String in java script---------------------
-// let myName ="parvez mahmud";
-// console.log(myName.length);
+//----Date and Time in javascript ===========
 
-//-------using escape characters like backslash-------------
+// let currDate = new Date();
+// console.log(currDate);
+// console.log(new Date());
+// console.log(new Date().toLocaleString());
+// console.log(new Date().toString());
+// console.log(Date.now());
+// var d = new Date(2021,3,6);
+// console.log(d);
 
-// let anySentence = "We are so called \"vikikings\" from the north";
-// console.log(anySentence);
+// var dl = new Date("october 13, 2021 11:13:00");
+// console.log(dl.toLocaleString());
 
-// string search
+// var dll = new Date(1631132793701);
+// console.log(dll);
 
-// const myBioData = "i am parvez mahmud";
-// console.log(myBioData.indexOf("parvez"));
-// console.log(myBioData.lastIndexOf("m",13))
+//How to get indivisual date 
 
-// const myBioData = "i am not here and not parvez";
-// let Sdata = myBioData.search("not");
-// console.log(Sdata);
+//const curDate = new Date();
+// console.log(curDate.toLocaleString());
+// console.log(curDate.getFullYear());
+// console.log(curDate.getMonth());
+// console.log(curDate.getDate());
+// console.log(curDate.getDay());
 
-// ---------slice method -----
+//const curDate = new Date();
+//  console.log(curDate.toLocaleString());
+//  console.log(curDate.setFullYear(2022));
+//  console.log(curDate.setFullYear(2022,10,5));
+//  console.log(curDate.setMonth(10));
+//  console.log(setMonth);
+//  console.log(curDate.setDate(5));
 
-// let str = "Aplle, Bananaa, Grape";
-// let strSlice = str.slice(0,5);
-// console.log(strSlice);
+// ------- get times-------------
+// const curDate = new Date();
+// console.log(curDate.getTime());
+// console.log(curDate.getHours());
+// console.log(curDate.getMinutes());
+// console.log(curDate.getSeconds());
+// console.log(curDate.getMilliseconds());
+// -----------how to set individual time--------
 
-// let str = "Aplle, Bananaa, Grape";
-// let strSlice = str.slice(7,-2);
-// console.log(strSlice);
+// const curtime = new Date();
 
-// ---Display only 280 characters of string like one used in a twitter ------
+// //console.log(curtime.setTime());
+// console.log(curtime.setHours(5));
+// console.log(curtime.setMinutes(5));
+// console.log(curtime.setSeconds(5));
+// console.log(curtime.setMilliseconds(5));
+// function myFunction(){
+//     const t = new Date();
+//      t.setHours(5);
+//     document.getElementById("demo").innerHTML = t;
+// }
 
-// let myTweets = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, .";
-// let myActualTweets = myTweets.slice(0,280);
-// console.log(myActualTweets);
-// console.log(myActualTweets.length);
+// to get only time and only date
 
-//------------ substring method---------------
-// let str = "Aplle, Bananaa, Grape";
-// let res = str.substring(0,5);
-//let res = str.substring(7,-2);
-// -2 means start with 0;
-// console.log(res);
+const d = new Date().toLocaleDateString();
+document.getElementById("date").innerHTML = d;
 
-//-------- substr------------------------------
-
-//let str = "Aplle, Bananaa, Grape";
-//let res = str.substr(0,5);
-//let res = str.substr(-4);
-//console.log(res);
-
-// ---------replacing string words or string-----------------------
-
-// let myBioData = `I am parvez mahmud from the coding knowledge parvez`;
-// let replaceData = myBioData.replace("parvez","PARVEZ");
-// console.log(replaceData);
-
-// --------extracting  string characters at string -------------
-//-------- String charAt(position)-------------
-// let str = "Hello World";
-// let newValue = str.charAt(4);
-// console.log(newValue);
-
-// string charcodeAt---
-
-let str = "Hello WorlD";
-
-// let newValue = str.charCodeAt(4);
-// console.log(newValue);
-// Find the last character unicode of the string
-
-// let searchCodeAt = str.charCodeAt(str.length-1);
-// console.log(searchCodeAt);
-
-// // property access of a string 
-
-// let property = "HELLO WORLD";
-// console.log(property[0]);
-
-//------- to upercase and to lower case -------
-// let property = "HELLO WORLD";
-// console.log(property.toLowerCase());
-// let lower = " hellow world";
-// console.log(lower.toUpperCase());
-
-// ------- concat process ------------
-// let fName = "parvez";
-// let lName = "Mahmud";
-// console.log(fName.concat(lName));
-// console.log(fName.concat(" ",lName));
-
-//--------- trim function to remove side spaces not from middle
-
-// let removeSpaces = "      parvez     mahmud        ";
-// console.log(removeSpaces.trim())
-
-// ---------convert a string to array with split method----
-
-let txt = "a,b,c, d, | e,f";
-console.log(txt.split(" , "));
-console.log(txt.split("  "));
-console.log(txt.split(" | "));
+const t = new Date().toLocaleTimeString();
+document.getElementById("time").innerHTML = t;
