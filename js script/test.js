@@ -1,63 +1,44 @@
-//----Date and Time in javascript ===========
+//----------------- Math object in java script------------------
+// value of PI
+//console.log(Math.PI);
 
-// let currDate = new Date();
-// console.log(currDate);
-// console.log(new Date());
-// console.log(new Date().toLocaleString());
-// console.log(new Date().toString());
-// console.log(Date.now());
-// var d = new Date(2021,3,6);
-// console.log(d);
+//--------- Round the number -----------
+//let num = 10.234232;
+//console.log(Math.round(num));
+//---------- power the numbers--------------
+//console.log(Math.pow(10,3));
+//console.log(10**3);
 
-// var dl = new Date("october 13, 2021 11:13:00");
-// console.log(dl.toLocaleString());
+//------ Square root -------
 
-// var dll = new Date(1631132793701);
-// console.log(dll);
+//console.log(Math.sqrt(25)); 
+//console.log(Math.sqrt(36)); 
+//console.log(Math.sqrt(81)); 
+//console.log(Math.sqrt(66)); 
 
-//How to get indivisual date 
+// --------------- Math.abs------
+// console.log(Math.abs(-4.55));
+// console.log(Math.abs(-5));
+// console.log(Math.abs(-890));
+// console.log(Math.abs(4-6));
+//---math.ceil------
+// console.log(Math.ceil(4.5));
+// console.log(Math.ceil(9.01));
+//----Math.floor-------------
+// console.log(Math.floor(9.01));
+//console.log(Math.floor(9.6));
 
-//const curDate = new Date();
-// console.log(curDate.toLocaleString());
-// console.log(curDate.getFullYear());
-// console.log(curDate.getMonth());
-// console.log(curDate.getDate());
-// console.log(curDate.getDay());
+// -----math.min and math.max======
 
-//const curDate = new Date();
-//  console.log(curDate.toLocaleString());
-//  console.log(curDate.setFullYear(2022));
-//  console.log(curDate.setFullYear(2022,10,5));
-//  console.log(curDate.setMonth(10));
-//  console.log(setMonth);
-//  console.log(curDate.setDate(5));
+//console.log(Math.min(2,4,5,-5,4,5,-7));
+//console.log(Math.max(2,4,5,-5,4,5,-7));
 
-// ------- get times-------------
-// const curDate = new Date();
-// console.log(curDate.getTime());
-// console.log(curDate.getHours());
-// console.log(curDate.getMinutes());
-// console.log(curDate.getSeconds());
-// console.log(curDate.getMilliseconds());
-// -----------how to set individual time--------
+//-------- math.random--------------
+console.log(Math.floor(Math.random() * 10));
 
-// const curtime = new Date();
+// Math trunc method-------------
 
-// //console.log(curtime.setTime());
-// console.log(curtime.setHours(5));
-// console.log(curtime.setMinutes(5));
-// console.log(curtime.setSeconds(5));
-// console.log(curtime.setMilliseconds(5));
-// function myFunction(){
-//     const t = new Date();
-//      t.setHours(5);
-//     document.getElementById("demo").innerHTML = t;
-// }
-
-// to get only time and only date
-
-const d = new Date().toLocaleDateString();
-document.getElementById("date").innerHTML = d;
-
-const t = new Date().toLocaleTimeString();
-document.getElementById("time").innerHTML = t;
+//console.log(Math.trunc(3.5));
+//console.log(Math.trunc(-3.5));
+//console.log(Math.trunc(9.1));
+//console.log(Math.trunc(11.5));
