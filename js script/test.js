@@ -1,89 +1,38 @@
-//----------------- Events in javascript------------------ 
-//---------2nd way of event listning-------------
-// const callingFunction = () => {
-//     alert('I am function,some body uses me');
-// };
-// //3rd way and it will overwrite using multiple time
-
-// const threeBtn = document.getElementById("thirdWay");
-// threeBtn.onclick = function(){
-//     alert("this is 3rd popular way ");
-// };
-
-// threeBtn.onclick = function(){
-//     console.log("this is 3rd popular way ");
-// };
-// //4th way it will not over write using 4th way
-// const  fourthWay = document.querySelector('#fourthway');
-// fourthWay.addEventListener('click',()=>{
-//     alert("this is fourth way which is add event listn")
-// });
-
-// fourthWay.addEventListener('click',()=>{
-//     console.log("this is fourth way which is add event listn")
-// })
-
-//------- Event ovject------------- 
-
-// const forthWay = document.getElementById("fourthway");
-// const checkEvent = () =>{
-//     alert('I am fourth way alerm');
-//     console.log(event);
-//     console.log(event.target);
-//     console.log(event.type);
-    
+//------------------ timeout and setinterval---------------
+// set time out
+// const myName =document.getElementById('showMyName');
+// const btn = document.getElementById("btn");
+// const showMyName = ()=>{
+//     myName.innerHTML = "loading...........";
+//   setTimeout(()=>{
+//       myName.innerHTML = "Parvez mahmud";
+//   },1000)
 // }
 
-
-
-// forthWay.addEventListener('click',checkEvent);
-
-//---------------Mouse events----------------------
-//---mouse up and mouse down------------------------
-// function mousedown(){
-//     document.getElementById("mypara").style.color = "red";
-// }
-// function mouseup(){
-//     document.getElementById("mypara").style.color = "orange";
-// }
-// ---------------Mouseenter and Mouse leave---------------
-// const mEnter= document.getElementById("box");
-// mEnter.addEventListener('mouseenter',()=>{
-//     mEnter.style.backgroundColor = "green";
-//     console.log("mouse is entered");
-// });
-// mEnter.addEventListener('mouseleave',()=>{
-//     mEnter.style.backgroundColor = "pink";
-//     console.log("mouse is leaved bro");
-// })
-
-
-//--------------keyboard event objects in javascript-------------
-
-// const keypress = () =>{
-//     document.getElementById("keys").innerHTML = `You press ${event.key} and it's code is ${event.code}`;
+// btn.addEventListener('click',showMyName);
+// -------clear time out---------------
+// function myFunction(){
+//   alert("hello world");
 // }
 
-// const keyup = () =>{
-//     document.getElementById("keys").innerHTML = "This is key up";
-// }
-// const keydown = () =>{
-//     document.getElementById("keys").innerHTML = "this is key Down";
-// }
+//---------set interval and  Clear interval-------
 
-//-----------------onchange event-----------------------
+const stopNum = document.querySelector('p');
+const btn = document.querySelector('#btn');
+const btn1 = document.querySelector('#btn1');
+let stp ;
+let num = 0;
+const myShowNum = () =>{
+  stopNum.innerHTML = "Loading----";
+  stp = setInterval(() => {
+    stopNum.innerHTML = `${num}`;
+    num++
+  }, 1000);
+}
 
-// const selectElement = () => {
-//     const getText = document.getElementById("ice").value;
-//     const getchange = document.getElementById("icecreames").value;
-//     console.log(`${getText} and ${getchange}`);
-//     const getEvery = document.getElementById("getevery").innerHTML = ` Mr ${getText} and ${getchange} ice cream flavour`;
-// }
-// const icecreames = document.getElementById("icecreames");
-// icecreames.addEventListener("change",()=>{
-//         const getText = document.getElementById("ice").value;
-//    const getchange = document.getElementById("icecreames").value;
-//   console.log(`${getText} and ${getchange}`);
-//   const getEvery = document.getElementById("getevery");
-//   getEvery.innerHTML = ` Mr ${getText} and ${getchange} ice cream flavour`;
-// });
+
+
+btn.addEventListener('click',myShowNum);
+btn1.addEventListener('click',()=>{
+  clearInterval(stp);
+})
