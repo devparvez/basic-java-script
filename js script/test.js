@@ -1,116 +1,54 @@
-//--------OOPS AND ECMASCRIPT 2015 OR ES6----------
-
-
-//-------- oops projects ------------------------
-// let myBioData = {
-//   myName:"parvez Mahmud",
-//   age:29,
-//   getData(){
-//     console.log(`This is ${myBioData.myName} and so ${myBioData.age}`);
-//   }
-// }
-// console.log(myBioData.myName);
-// myBioData.getData();
-//----------Multiple object like object inside object-------
-// let myBioData = {
-//   myName:{
-//     firstName:"parvez",
-//     lastName:"Mahmud",
-//   },
-//   age:29,
-//   getData(){
-//     console.log(`This is ${myBioData.myName} and so ${myBioData.age}`);
-//   }
-// }
-// console.log(myBioData.myName.lastName);
-//-----------Window global objects------
-//console.log(this.alert());
-
-//----------this refer as window objects-----------------
-// function myfunction(){
-  // console.log(this);
-//}
-//myfunction();
-//---------Ex-3---------
-// let myNames ="parvez";
-// function myNamess(){
-//   console.log(this.myName);
-// }
-// myNamess();
-
-// There "this" means name of object
-
-// const obj = {
-//   myAge : 26,
-//   myName(){
-//     console.log(this.myAge);
-//   }
-// }
-// obj.myName();
-
-// using flat arrow function 'this' means window object
-
-// const obj ={
-//   myAge:26,
-//   myName:()=>{
-//     console.log(this)
-//   }
-// }
-// obj.myName();
-
-//------- Es6 or ECMA SCRIPT 2015-----------
-//--------Array desturing--------------
-//const myBioData = ['parvez','mahmud',29];
-
-// let myFname =myBioData [0];
-// let myLName =myBioData [1];
-// let myAge = myBioData[2];
+//-------------Es8 features 2017------------
+//------string padding--------------
+// let message = "parvez".padStart(40);
+// console.log(message);
+// let myAge = "27".padEnd(20);
 // console.log(myAge);
-//---------destructuring-------------
-//let [myFname,myLName,myAge] = myBioData
-//console.log(myAge);
-// we can add value too
-// let [myFName,myLName,myAge,myDegree = "M.sc"] = myBioData;
-// console.log(myDegree);
 
-//------object desturing--------------
-// const myBioData = {
-//   myFname : 'Parvez',
-//   myLname : 'Mahmud',
-//   myAge:30
-// }
-// let fname= myBioData.myFname;
-// let lname = myBioData.myLname;
-// let age = myBioData.myAge;
-// console.log(age);
-// //destructuring --
-// let {myFname,myLname,myAge,myDegree = "M.sc"} = myBioData;
-// console.log(myLname);
+//---object.values and object.entries======
 
-//------------object properties---------------
+// let person = {
+//   name : "frd",
+//   age : 45
+// };
+// console.log(Object.values(person));
+// console.log(Object.entries(person));
 
-//Dynamic objects
+// ------Es18--------------------
+// const person = {name:"fred",age:87};
+// const sperson = {ella:"sawon",...person};
+// console.log(person);
+// console.log(sperson);
 
-// const myName = "parvez";
-// const myBioData = {
-//   [myName] : "hello how are you",
-//   [20+6]   : "is my age",
-// }
-// console.log(myBioData);
+//--------Flat array-------------
 
-// if keys and values are same then no need to write
+// const arr =[
+//   ["Zone1", "zone2"],
+//   ["Zone3", "zone4"],
+//   ["Zone5", "zone6"],
+//   ["Zone7", "zone8"],
+//   ["Zone9", ["zone10","zone11"],["zone12","zone13"],["zone12","zone14"]]
+// ];
+// console.log(arr.flat(Infinity));
 
-// let myName= "parvez";
-// let myAge = 26;
-// const myBioData = {
-//   //myName : myName,
-//   //myAge : myAge
-//   myName,myAge
-// }
-// console.log(myBioData);
+// ------fromentries used--------
+// const person = {
+//   Name:"fred",
+//   age:33
+// };
+// const arrobj = Object.entries(person);
+// console.log(arrobj);
+// console.log(Object.fromEntries(arrobj));
 
-//------spread operators-------------
+//---------- BigInt----------------
+// let oldNum = Number.MAX_SAFE_INTEGER;
+// console.log(oldNum);
+// const newNum = 9007199254740991n+12n;
+// console.log(typeof newNum);
+// console.log(newNum) 
 
-let colors = ['red','green','blue','orange'];
-let allcolors =[...colors,'yellow','Black'];
-console.log(allcolors);
+//---Ecmascript use Strict moode
+//------
+"use strict";
+let x = 3.14;
+console.log(x);

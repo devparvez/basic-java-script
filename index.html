@@ -5,6 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .parentdiv{
+            height:300px;
+            width:500px;
+            border:2px solid black;
+            background-color: #b18b25;
+            cursor: pointer;
+        }
+        .childdiv {
+            height: 200px;
+            height:200px;
+            width:300px;
+            border:2px solid black;
+            background-color: #1dd1a1;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <!------
@@ -99,10 +116,18 @@
 
 </div>
 -------->
-<p>Can you stop me when i reach at 5</p>
+<!-- <p>Can you stop me when i reach at 5</p>
 <br>
 <button id="btn">Click here</button>
-<button id = "btn1">Stop</button>
+<button id = "btn1">Stop</button> -->
+
+<div class="parentdiv" id="parentid">
+
+    <div class="childdiv" id="childid">
+
+    </div>
+
+</div>
 
 
  <script src="./js script/test.js"></script>  
