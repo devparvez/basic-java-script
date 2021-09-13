@@ -1,38 +1,116 @@
-//------------------ timeout and setinterval---------------
-// set time out
-// const myName =document.getElementById('showMyName');
-// const btn = document.getElementById("btn");
-// const showMyName = ()=>{
-//     myName.innerHTML = "loading...........";
-//   setTimeout(()=>{
-//       myName.innerHTML = "Parvez mahmud";
-//   },1000)
+//--------OOPS AND ECMASCRIPT 2015 OR ES6----------
+
+
+//-------- oops projects ------------------------
+// let myBioData = {
+//   myName:"parvez Mahmud",
+//   age:29,
+//   getData(){
+//     console.log(`This is ${myBioData.myName} and so ${myBioData.age}`);
+//   }
 // }
-
-// btn.addEventListener('click',showMyName);
-// -------clear time out---------------
-// function myFunction(){
-//   alert("hello world");
+// console.log(myBioData.myName);
+// myBioData.getData();
+//----------Multiple object like object inside object-------
+// let myBioData = {
+//   myName:{
+//     firstName:"parvez",
+//     lastName:"Mahmud",
+//   },
+//   age:29,
+//   getData(){
+//     console.log(`This is ${myBioData.myName} and so ${myBioData.age}`);
+//   }
 // }
+// console.log(myBioData.myName.lastName);
+//-----------Window global objects------
+//console.log(this.alert());
 
-//---------set interval and  Clear interval-------
+//----------this refer as window objects-----------------
+// function myfunction(){
+  // console.log(this);
+//}
+//myfunction();
+//---------Ex-3---------
+// let myNames ="parvez";
+// function myNamess(){
+//   console.log(this.myName);
+// }
+// myNamess();
 
-const stopNum = document.querySelector('p');
-const btn = document.querySelector('#btn');
-const btn1 = document.querySelector('#btn1');
-let stp ;
-let num = 0;
-const myShowNum = () =>{
-  stopNum.innerHTML = "Loading----";
-  stp = setInterval(() => {
-    stopNum.innerHTML = `${num}`;
-    num++
-  }, 1000);
-}
+// There "this" means name of object
 
+// const obj = {
+//   myAge : 26,
+//   myName(){
+//     console.log(this.myAge);
+//   }
+// }
+// obj.myName();
 
+// using flat arrow function 'this' means window object
 
-btn.addEventListener('click',myShowNum);
-btn1.addEventListener('click',()=>{
-  clearInterval(stp);
-})
+// const obj ={
+//   myAge:26,
+//   myName:()=>{
+//     console.log(this)
+//   }
+// }
+// obj.myName();
+
+//------- Es6 or ECMA SCRIPT 2015-----------
+//--------Array desturing--------------
+//const myBioData = ['parvez','mahmud',29];
+
+// let myFname =myBioData [0];
+// let myLName =myBioData [1];
+// let myAge = myBioData[2];
+// console.log(myAge);
+//---------destructuring-------------
+//let [myFname,myLName,myAge] = myBioData
+//console.log(myAge);
+// we can add value too
+// let [myFName,myLName,myAge,myDegree = "M.sc"] = myBioData;
+// console.log(myDegree);
+
+//------object desturing--------------
+// const myBioData = {
+//   myFname : 'Parvez',
+//   myLname : 'Mahmud',
+//   myAge:30
+// }
+// let fname= myBioData.myFname;
+// let lname = myBioData.myLname;
+// let age = myBioData.myAge;
+// console.log(age);
+// //destructuring --
+// let {myFname,myLname,myAge,myDegree = "M.sc"} = myBioData;
+// console.log(myLname);
+
+//------------object properties---------------
+
+//Dynamic objects
+
+// const myName = "parvez";
+// const myBioData = {
+//   [myName] : "hello how are you",
+//   [20+6]   : "is my age",
+// }
+// console.log(myBioData);
+
+// if keys and values are same then no need to write
+
+// let myName= "parvez";
+// let myAge = 26;
+// const myBioData = {
+//   //myName : myName,
+//   //myAge : myAge
+//   myName,myAge
+// }
+// console.log(myBioData);
+
+//------spread operators-------------
+
+let colors = ['red','green','blue','orange'];
+let allcolors =[...colors,'yellow','Black'];
+console.log(allcolors);
