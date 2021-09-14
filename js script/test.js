@@ -1,44 +1,155 @@
-// const parentId = document.getElementById("parentid");
-// const childId = document.getElementById("childid");
+// -------------How javascript works and asynchronous java script-----------------
+//---------- Lexical scoping------------------
+// const b = "Hello guyes";
 
-// let parentCall=()=>{
-//   alert('parent div call');
+// const LexiFirst = ()=>{
+//   const a = "I am parvez";
+//   const lexiSecond = () =>{
+//     const c = "Thank you very much";
+//     console.log(a+b+c);
+//   }
+//   lexiSecond();
+// }
+// LexiFirst();
 
+//-----closure functions---------
+
+// let outerFun = (a)=>{
+//   let b = 7;
+//   let innerFun = () =>{
+//     let sum = a+b;
+//     console.log(sum);
+//   }
+//   innerFun();
+// }
+// outerFun(5);
+//--------- Better closure example---------------
+// let outerFun = (a)=>{
+//   let b = 7;
+//   let innerFun = () =>{
+//     let sum = a+b;
+//     console.log("the sum of "+sum);
+//   }
+//   return innerFun;
+// }
+// let checkClosure = outerFun(5);
+// console.dir(checkClosure);
+
+// Asynchronys in javascript
+// let fun2 = ()=>{
+//   setTimeout(()=>{
+//     console.log("function2 is called");
+//   },2000)
+// }
+// const fun1 = () =>{
+//   console.log('function 1 is called');
+//   fun2();
+//   console.log("function 1 is called again");
+// }
+// fun1();
+// --------------curring function-------------
+
+//  function sum(num1){
+
+//   return function (num2){
+//     return function(num3){
+//       console.log(num1,num2,num3);
+//     }
+//   }
+// }
+
+// sum(5)(4)(3);
+// const sum = (num1) =>(num2)=>(num3) =>console.log(num1+num2+num3);
+// sum(5)(4)(3);
+
+//-----------rest Api --------------
+// const container = document.querySelector("#container");
+
+// const request = new XMLHttpRequest();
+// request.open('GET',"https://restcountries.eu/rest/v2/name/nepal/");
+// request.send();
+
+// // to get response
+// request.addEventListener('load',function(){
+//  // const Data = this.responseText
+//  //console.log(this.responseText);
+//  const [data] = JSON.parse(this.responseText);
+//  //console.log(data.capital);
+
+// })
+
+//-----jSOn file----------------
+// var my_object = {
+//   key_1:"some text",
+//   key_2:"true",
+//   key_3: 5
 // };
-// let childCall=()=>{
-//   alert('child div call');
-//   //event.stopPropagation();
+// var object_as_string = JSON.stringify(my_object);
+// console.log(object_as_string);
+// console.log(JSON.parse(object_as_string));
 
+//-------- promise ,dad joke Api------
+
+//GET https://icanhazdadjoke.com/
+
+// const jokes = document.querySelector('#jokes');
+// const jokeBtn = document.querySelector('#jokeBtn');
+// const generateJokes = () =>{
+//   const setHeader = {
+//     headers:{
+//       accept: "application/json"
+//     }
+//   }
+
+
+//   fetch('https://icanhazdadjoke.com/',setHeader)
+//   .then( (res)=>(res.json())
+//   ).then((data)=>{
+//     jokes.innerHTML = data.joke;
+//   }).catch((error)=>{
+//     console.log(error);
+//   })
 // }
 
-// // in capturing event we use 3rd parameter true ------------
-// //and by default it is false and called capturing phase------
-// parentId.addEventListener('click',parentCall,true);
-// childId.addEventListener('click',childCall,true);
+// jokeBtn.addEventListener('click',generateJokes);
+// generateJokes();
 
-//----- Create a calculator -----------
+//-------------async function--------------------
 
-// Higher order function and call back function;
-// const add = (a,b) =>{
-//   return a+b;
-// }
-// const subs = (a,b) => {
-//   return Math.abs(a-b);
-// }
-// const mult =(a,b) =>{
-//   return a*b;
-// }
-// const calculator = (num1,num2,operator) =>{
-//   return operator(num1,num2);
-// }
+const jokes = document.querySelector('#jokes');
+const jokeBtn = document.querySelector('#jokeBtn');
+const generateJokes = async() =>{
+  
+  try{
 
-// console.log(calculator(5,2,subs));
+    const setHeader = {
+      headers:{
+        accept: "application/json"
+      }
+    }
 
-const add = (a,b)=>{
-  return a+b;
+
+  const res = await fetch('https://icanhazdadjoke.com/',setHeader);
+  const data = await res.json();
+  jokes.innerHTML = data.joke;
+
+  }catch(err){
+    console.log(`the err is ${err}`);
+  }
+
+
+  // const res = await fetch('https://icanhazdadjoke.com/',setHeader);
+  // const data = await res.json;
+  // jokes.innerHTML = data.joke;
+
+
+//   .then( (res)=>(res.json())
+//   ).then((data)=>{
+//     jokes.innerHTML = data.joke;
+//   }).catch((error)=>{
+//     console.log(error);
+//   })
 }
 
-const calculator = (num1,num2,operator)=>{
-  return operator(num1,num2);
-}
-console.log(calculator(3,4,add));
+jokeBtn.addEventListener('click',generateJokes);
+generateJokes();
