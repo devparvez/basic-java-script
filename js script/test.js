@@ -116,26 +116,26 @@
 
 //-------------async function--------------------
 
-const jokes = document.querySelector('#jokes');
-const jokeBtn = document.querySelector('#jokeBtn');
-const generateJokes = async() =>{
+// const jokes = document.querySelector('#jokes');
+// const jokeBtn = document.querySelector('#jokeBtn');
+// const generateJokes = async() =>{
   
-  try{
+//   try{
 
-    const setHeader = {
-      headers:{
-        accept: "application/json"
-      }
-    }
+//     const setHeader = {
+//       headers:{
+//         accept: "application/json"
+//       }
+//     }
 
 
-  const res = await fetch('https://icanhazdadjoke.com/',setHeader);
-  const data = await res.json();
-  jokes.innerHTML = data.joke;
+//   const res = await fetch('https://icanhazdadjoke.com/',setHeader);
+//   const data = await res.json();
+//   jokes.innerHTML = data.joke;
 
-  }catch(err){
-    console.log(`the err is ${err}`);
-  }
+//   }catch(err){
+//     console.log(`the err is ${err}`);
+//   }
 
 
   // const res = await fetch('https://icanhazdadjoke.com/',setHeader);
@@ -149,7 +149,86 @@ const generateJokes = async() =>{
 //   }).catch((error)=>{
 //     console.log(error);
 //   })
-}
+// }
 
-jokeBtn.addEventListener('click',generateJokes);
-generateJokes();
+// jokeBtn.addEventListener('click',generateJokes);
+// generateJokes();
+
+
+//---------------2nd project thermo meter-------------------
+
+// const tempload =() => {
+//   let temp = document.getElementById('temp');
+//   temp.innerHTML = "&#xf2cb";
+//   setTimeout( ()=>{
+//     temp.innerHTML = "&#xf2ca";
+//     temp.style.color = "#f8b627";
+//   },1000)
+//   setTimeout( ()=>{
+//     temp.innerHTML = "&#xf2c9";
+//   },2000)
+//   setTimeout( ()=>{
+//     temp.innerHTML = "&#xf2c8";
+//   },3000)
+//   setTimeout( ()=>{
+//     temp.innerHTML = "&#xf2c7";
+//     temp.style.color = "#d63031";
+//   },4000)
+
+// }
+
+// tempload();
+
+// setInterval(tempload,5000)
+
+
+//-------- 3rd project-----------------temperature conversion------------
+
+// const temperaturecalc = () =>{
+//   const numberTemp = document.getElementById('temp').value;
+//   //console.log(numberTemp);
+//   const tempSelected = document.getElementById('temp_diff');
+  
+//   const valueTemp = temp_diff.options[tempSelected.selectedIndex].value;
+//   console.log(valueTemp);
+
+//   let celToFah = (cel) =>{
+//     let farhenhight = Math.round((cel*9/5)+32);
+//     return farhenhight;
+//   }
+//   let FahToCel = (fah) =>{
+//     let farhenhight = Math.round((fah-32)*5/9);
+//     return farhenhight;
+//   }
+//   //console.log(valueTemp);
+//   let result;
+//   if(valueTemp == 'cel'){
+//     result = celToFah(numberTemp);
+//     document.getElementById('resultcontainer').innerHTML = `${result} celsius`;
+//   }else{
+//     result = FahToCel(numberTemp);
+//     document.getElementById('resultcontainer').innerHTML = `${result} Ferhenheit`;
+//   }
+// }
+//---------- 4th project ----------------counter-------
+
+const counters = document.querySelectorAll(".counter");
+counters.forEach((counter)=>{
+  //console.log(counter);
+  counter.innerHTML = 0;
+  const updatecounter = () =>{
+    const targetCount = +counter.getAttribute('data-target');
+    //console.log(targetCount);
+    const startingNum = Number(counter.innerHTML)
+    const incr = targetCount/100;
+    if(startingNum < targetCount){
+      counter.innerHTML = `${startingNum+incr}`;
+      setTimeout(updatecounter, 1000);
+    }else{
+      counter.innerHTML = targetCount;
+    }
+  }
+
+
+  updatecounter();
+})
