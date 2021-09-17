@@ -105,5 +105,5 @@ for(let number in numbers){
     //console.log(number);
     console.log(numbers[number]);
 }
-//--- it is better to use "for in loop for object " not for array because array index order is so important
+//--- it is better to use "for in loop for object " not for array because array index order is so importantjh
 
