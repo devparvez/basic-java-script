@@ -1,79 +1,64 @@
-/* 
-title: To do application using vanila js DOM
-Description:This js file has all the js functions necessary to control the js Applications
-Author:dev parvez
-date:9/24/2021
+// remove falsi values
 
-*/
+const fruits = ["jackfruits",0,undefined,"banana",NaN,"apple",false,null,"mango",""]
+const realFruits=fruits.filter(Boolean);
+console.log(realFruits);
 
+// convert any value to Boolean
 
-
- // select elements & assign them to variables
- let newTask = document.querySelector('#new-task');
- let form = document.querySelector('form');
- let todoUl = document.querySelector('#items');
- let completeUl = document.querySelector('.complete-list ul');
+console.log(!!"mashrafi");
+console.log(!! 0);
+console.log(!! undefined);
+console.log(Boolean(1));
+console.log(Boolean("parvez"));
 
 
-// functions
-let createTask = function(task) {
-    let listItem = document.createElement('li');
-    let checkBox = document.createElement('input');
-    let label = document.createElement('label');
+//--------resizing an array-------------
 
-    label.innerText = task;
-    checkBox.type = 'checkbox';
+const animals = ["Elephant","Monkey","pigion","snake"];
+animals.length = 3;
+console.log(animals);
 
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
+// ------------------------flatten the array--------------
+const needtoFlat = ['shohag','kamrul','dogol','mowla',['johir','jahangir','sohir',['janu','vodro','jomor'],],'somon']
+console.log(needtoFlat.flat(Infinity));
 
-    return listItem;
+//-------------short conditional------------------
+let captain = "Mushfiq";
+if(captain=== "Mushfiq"){
+    console.log('I love mushfiq');
+}
+captain === "Mushfiq" && console.log("I love Mushi");
+
+if(captain!== "Mushfiq"){
+    console.log('I love mushfiq');
 }
 
-let addTask = function(event) {
-    event.preventDefault();
-    let listItem = createTask(newTask.value);
-    todoUl.appendChild(listItem);
-    newTask.value = "";
-    // bind the new list item to the incomplete list
-    bindInCompleteItems(listItem, completeTask);
+captain === "Mushfiq" || console.log("I love Mushi");
+
+//--------------Replace all occurences of String----------
+
+const qoute = "I love America and America is a good country and it is known to all that America is most powerful country";
+// Replace all the occurences of America with Bangladesh
+console.log(qoute.replace(/America/g,"Bangladesh"))
+
+// -----log values with variable names-------
+const library1 = "jquery";
+const library2 = "React";
+//instead of doing this  
+
+console.log(`library1 ${library1}`);
+console.log(`library2 ${library2}`);
+// we do
+console.log({library1});
+console.log({library2});
+
+// How to check performance of a program
+
+ const startTime = performance.now();
+for(let i = 0; i <= 100; i++){
+    console.log(i);
 }
+const endTime = performance.now();
 
-let completeTask = function() {
-    let listItem = this.parentNode;
-    let deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Delete';
-    deleteBtn.className = 'delete';
-    listItem.appendChild(deleteBtn);
-
-    let checkBox = listItem.querySelector('input[type="checkbox"]');
-    checkBox.remove();
-    completeUl.appendChild(listItem);
-    bindCompleteItems(listItem, deleteTask);
-}
-
-let deleteTask = function() {
-    let listItem = this.parentNode;
-    let ul = listItem.parentNode;
-    ul.removeChild(listItem);
-}
-
-let bindInCompleteItems = function(taskItem, checkboxClick) {
-    let checkBox = taskItem.querySelector('input[type="checkbox"]');
-    checkBox.onchange = checkboxClick;
-}
-
-let bindCompleteItems = function(taskItem, deleteButtonClick) {
-    let deleteButton = taskItem.querySelector('.delete');
-    deleteButton.onclick = deleteButtonClick;
-}
-
-for(let i=0; i< todoUl.children.length; i++ ) {
-    bindInCompleteItems(todoUl.children[i], completeTask);
-}
-
-for(let i=0; i< completeUl.children.length; i++ ) {
-    bindCompleteItems(completeUl.children[i], deleteTask);
-}
-
-form.addEventListener('submit', addTask);
+console.log(`The time is ${endTime-startTime} in miliseconds`);
