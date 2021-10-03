@@ -1,176 +1,310 @@
-// -----------------protips class 2------------
-// -------------swap value of an array------------
-// const numbers = [1,2,3,4,5];
-// let temp = numbers[0];
-// numbers[0] = numbers [4];
-// numbers[4] = temp;
-// console.log(numbers);
+// Find the largest Number 
+// let num1 = prompt('Input  number1 '); 
+// let num2 = prompt('Input  number1 '); 
+// let num3 = prompt('Input  number1 '); 
 
-//------------ swaping with array destructuring ---------
-// const numbers = [1,2,3,4,5];
-// [numbers[0],numbers[4]]= [numbers[4],numbers[0]];
-// console.log(numbers);
-
-// // -----------Do swap with Math-------------
-// let a = 1;
-// let b = 2;
-// b = a + (a = b)-b
-// console.log(a,b);
-
-// =======copy to clipboard function=============
-// function copyToClipBoard(str){
-//     let element = document.createElement("textarea");
-//     element.value = str;
-//     document.body.appendChild(element);
-//     element.select();
-//     document.execCommand("copy");
-//     document.body.removeChild(element);
+// if(num1 > num2 && num1 > num3){
+//     console.log("number1 is greates and number is",num1);
+// }else if(num2 > num1 && num2 > num3){
+//     console.log("number2 is greates and number is",num2);
+// }else{
+//     console.log("the number 3 is gretest ",num3);
 // }
 
+//-------vowel and consonent print ------------------
+// let vowel = prompt("Enter A letter for checking vowel consonent")
+// vowel = vowel.toLowerCase();
 
-// function handleClick(){
-//     let text = document.querySelector('#text');
-//     copyToClipBoard(text.innerText);
+// if(vowel == "a" || vowel == "e" || vowel == "i" || vowel == "o" || vowel == "u") {
+//     console.log("this vowel and it is "+ vowel);
+// }else{
+//     console.log("this is not a vowel");
 // }
 
-//-----------destructuring  aliases---------------------
-// const language = {
-//     name:"javascript",
-//     founded:1995,
-//     founder:"Brenden Eich"
+// -------------Digit Spelling method-----------
+
+// let digit = prompt("Enter a valid digit");
+
+// switch(digit){
+//     case "0":
+//         console.log("zero");
+//         break;
+//     case "1":
+//         console.log("one");
+//         break;
+//     case "2":
+//             console.log("Two");
+//             break;
+//     case "3":
+//             console.log("Three");
+//             break;
+//     case "4":
+//             console.log("Four");
+//             break;
+//     default:
+//         console.log("Not valid")                                    
 // }
-// const{name:languageName,founder:creatorName}= language
 
-// console.log(languageName,creatorName);
+//------------check vowel or consonent using switch method------------
+// var vowel = prompt("Input a charecter or letter");
+// vowel = vowel.toLowerCase();
+// switch(vowel){
+//     case "a":   
+//     case "e":   
+//     case "i":    
+//     case "o": 
+//     case "u":
+//         document.write("this is a  vowel "+vowel);
+//         break;
+//     default:
+//         console.log("This is not a vowel")                   
+// }
 
-//-------------input value as a number-----------------
+// find the sum of 1 -5 
+// let sum = 0;
+// for(let x = 1; x <= 5; x++){
+//     sum = sum + x;
+// }
+// document.write(sum);
 
-// const number = document.querySelector('#number').valueAsNumber;
 
-// console.log( number); 
+//----------- Input from user---------------
+// let m = prompt("please enter a valid starting number ");
+// let n = prompt("please enter a valid end number ");
+// let sum = 0;
+// m = parseFloat(m);
+// n = parseFloat (n);
+// for( m =1 ; m <= n; m++){
+//     sum = sum + m;
+// }
+// document.write(sum);
 
-// //-----------remove duplicate value from array--------
+// for(let x = 1; x <= 5 ; x++){
 
-// const array = [1,2,2,3,3,3,4,5];
+//     let num1 = prompt("please enter  number");
+//     let num2 = prompt("please second  number");
+//     num1 = parseFloat(num1);
+//     num2 = parseFloat(num2);
+//     let num = num1 + num2;
+//     console.log(num);
+    
+// }
 
-// console.log([...new Set(array)]);
+// let x = 1;
+// let sum = 0;
 
-//--------------compare to arrays by value-------------
-
-//  const hasSameElements = (a,b)=>{
-//     return a.length === b.length && a.every((v,i)=>{
-//      return    (v === b[i]);
+// while(x <= 100){
+//     if(x % 3 == 0 && x % 5 == 0){
+//         sum = sum + x;
+       
 //     }
-//     )
+//     x++;
+    
+// }
+// console.log(sum);
+
+// for(let i = 1; i <= 100; i++){
+//     if(i == 10){
+//         break;
+//     }
+//     console.log(i);
 // }
 
-// console.log(hasSameElements([1,2],[2,2]));
+// ------------print the even numbers 1 -100
 
-//-----------Array shuffling---------------
-// const numbers = [1,2,3,4,5,6,7];
-
-// console.log(numbers.sort(()=> (Math.random()-.5)));
-
-//------------comma operator--------------------------
-
-// let x =1;
-// x = (x++ , x);
-// console.log(x);
-
-// let y = (3,4);
-// console.log(y);
-
-// let a = [[1,2,3,4],[3,4,5],[5,6],[7]]
-
-// for (let i = 0 , j = 3; i <=3,j >= 0; i++, j--){
-//     console.log("a[" + i + "] [" + j + "] = "+ a[i][j]);
+// for(let i = 1; i <= 100; i++){
+//     if(i % 2 !== 0){
+//         continue;
+//     }
+//     console.log(i);
 // }
 
-// document.write("<h1>I am busy<br></h1>")
-// document.write("<h1>I am busy<br></h1>")
-// let text = prompt("Enter your name:");
+//-------------- turnery operator ------------
+// let number = 3;
 
-// console.log(text.length)
+// let result = number > 0 ? console.log("positive") : "negative";
 
-// let text1 = "Banglades";
-// console.log(text1.charAt(4));
-// console.log(text1.toUpperCase());
-// ---------------task ------------------anisul islam
+// let num = prompt("enter the number ");
 
-// let text= prompt("please enter your first Name:");
-// let text2 = prompt("Enter your Last Name:");
+// num = parseFloat(num);
 
-// let text3 = "this is "+ text+ text2;
-// let text5 = text3.toUpperCase();
-// text4 = text3.length;
-// console.log(text3.charAt(1));
-// console.log(text5);
-// console.log(text4);
-// console.log(text3);
+// let result = num > 0 ? "positive" : num < 0? "negative" : " zero";
+// console.log(result);
 
-//------------Make a calculator---------------------
+//---------------Function with Anisul islam-------------
+// function add(a,b){
+//     let sum = a + b;
+//     document.write(sum);
+// }
 
-// let x = prompt('please input a number:');
-// let y= prompt('please input a number:');
-// x = parseInt(x);
-// y = parseInt(y);
-// let z = x + y;
+// function sub(a,b){
+//     let sum = Math.abs(a - b);
+//     return sum;
+// }
 
-// let z1 = x - y;
-// console.log(z);
-// console.log(z1);
+// add(6,7);
+// console.log(sub(9,7));
+
+// let result = sub(12,7);
+// console.log(result);
+
+//-------- imidiatly call a function--------
+
+// (function display(a){
+//     console.log(a)
+// })("I am bad");
+
+// (function add(b,c){
+//     let d = b + c;
+//     console.log(d);
+// })(40,50);
+
+//------function expression--------------
+//  let test = function express(a){
+//     console.log(a);
+//  }
+// test("Yes I have done the function expression");
+
+// let names = new Array(50);
+// names[0] = "parvez";
+// names[49] = " Mahmud";
+
+// console.log(names[0]+ names[49]);
+
+// const numbers = [10,20,30,40,50];
+// let sum = 0;
+// for(let i = 0; i <= 4 ; i++){
+//     console.log(numbers[i]);
+//     sum = sum + numbers[i];
+    
+
+// }
+// console.log(sum);
+
+// Get input from user on a array and do sum of the input numbers with loop
+
+// let num = new Array();
+// for(var i = 0 ; i <= 4; i++){
+//      num[i] = prompt("enter a number");
+//      num[i] = parseFloat(num[i]);
+// }
+// let sum = 0;
+// for(var  i = 0; i <= 4; i++){
+
+//     console.log(num[i]);
+  
+//     sum = sum + num[i];
+// }
+// console.log(sum);
+
+//-----------------------Go to --------------------
+// let num = new Array(50);
 
 
-// let x = prompt('please Enter a first   number:');
-// let y= prompt('Enter a second number');
-// x = parseInt(x,10);
-// y = parseInt(y,10);
-// let z = x + y;
-// let d = x - y;
-// let a = x * y;
 
-// let f = x / y;
-// let m = x % y;
+// for(let i = 0; i <=4 ; i++){
+//     num[i] = prompt("please enter a number");
+//     num[i] = parseFloat(num[i]);
+// }
+// let sum = 0;
+// for(let i = 0; i <= 4; i++){
+//     console.log(num[i]);
+//     sum = sum + num[i];
+// }
+// console.log(sum);
+
+//---------------- How to create an object---------------
+// const student1 = {
+//     name: "parvez",
+//     age : 23,
+//     cgpa:5,
+//     lang:['Bangali','hindi']
+// } 
+// const student2 = {
+//     name: 'Mahmud',
+//     age : 24,
+//     cgpa:5,
+//     lang:['Bangali','hindi','Eng']
+// } 
+// const student3 = {
+//     name: "Anika",
+//     age : 23,
+//     cgpa:5,
+//     lang:['Bangali','hindi','java']
+// } 
+// const student4 = {
+//     name: "parvez",
+//     age : 23,
+//     cgpa:5,
+//     lang:['Bangali','hindi']
+// } 
+// console.log(student4.lang);
+
+// function Student(name,age,cgpa,lang){
+//     this.name =name;
+//     this.age = age;
+//     this.cgpa = cgpa;
+//     this.lang = lang
+//     this.display = function(){
+
+//         console.log(this.name);
+//         console.log(this.age);
+//         console.log(this.cgpa);
+//         console.log(this.lang);
+//     }
+// }
+// let student1 = new Student("parvez",30,3.12,["hindi","gujrati"]);
+// //console.log(student1.cgpa);
+
+// student1.display();
+
+// let student2 = new Student("Rabea",3,4,["Eng","Bang"]);
+
+// student2.display();
+
+//--------------the Game of Gussing Number----------------
+// let won = 0;
+// let lost = 0;  
+// for(i = 0; i <=4 ;i++){
+//     let guessNum = prompt("please enter a number");
+//     guessNum = parseInt(guessNum);
+
+  
+
+// let randomNum = Math.floor(Math.random()*5) + 1;
+// if(guessNum == randomNum){
+//     console.log("You have won");
+//     won++;
+// }else{
+//     console.log("You have lost");
+//     lost++;
+// }    
+// }
+// console.log("You have lost times of "+lost);
+// console.log("You have lost times of "+won);
+
+//---------------Get element by tagname----------------
+//document.getElementsByName('h1');
+//document.getElementsByTagName('h1')[2].innerHTML = "hi";
+// function myfunction(){
+//     alert("there is something");
+// }
+
+// var heading3 = document.createElement('h1');
+// var text = document.createTextNode("this is heading 3 coming from javascript");
+// heading3.appendChild(text);
+// var myDiv = document.getElementById("my-div")
+// myDiv.appendChild(heading3);
+// var heading2 = document.getElementsByTagName("h1")[2];
+// myDiv.removeChild(heading2);
+
+var head4 = document.createElement('h2');
+
+var text4 = document.createTextNode("Hello second try");
 
 
-// console.log(x + " + " + y + " = " + z);
-// console.log(x + " - " + y + " = " + d);
-// console.log(x + " * " + y + " = " + a);
-// console.log(x + " / " + y + "=" + f );
-// console.log( x + " % " + y + "=" +m);
+head4.appendChild(text4);
 
-//----------- Area of rectangle----------------
-
-// var cel = prompt("enter a number of farhenheight");
-// //var height = prompt("enter Height");
-// var ce = parseFloat(cel);
-// //var he = parseFloat(height);
-// var far = (ce* (9/5)) + 32;
-
-
-// // var area = bas * he;
-// // console.log(area);
-
-
-// //var cel = (far - 32)*(5/9);
-// document.write(far);
-
-//--------------marks of a student ----------------------
-let number = prompt("please input a number");
-if(number > 100 || number < 0){
-    console.log('Invalid number');
-}else if(number >= 80 && number <= 100){
-    console.log("YOu got A + and your number is "+ number);
-}else if( number >= 70 && number <=79){
-    console.log("you got A and your number is "+ number);
-}else if( number >= 60 && number <=69){
-    console.log("you got B+ and your number is "+ number);
-}else if( number >= 50 && number <=59){
-    console.log("you got B and your number is "+ number);
-}else if( number >= 40 && number <=49){
-    console.log("you got C and your number is "+ number);
-}else if( number >= 33 && number <= 39){
-    console.log("you got D and your number is "+ number);
-}else {
-    console.log("you are Failed sorry try again and your Grade is F");
-}
+let myDiv = document.getElementById('my-div');
+let head5 = document.getElementsByTagName('h1')[2];
+myDiv.insertBefore(head4,head5);
