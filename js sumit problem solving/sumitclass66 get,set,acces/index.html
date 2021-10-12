@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object accessor sumit</title>
+</head>
+<body>
+
+    <script>
+
+        //------ for computed object use get==========
+        // const person ={
+        //     firstName:"parvez",
+        //     lastName:"Mahmud",
+        //     lang:"english",
+        //     get fullname(){
+        //         return this.firstName+" "+this.lastName;
+        //     }
+        // }
+
+        // const person ={
+        //     firstName:"parvez",
+        //     lastName:"Mahmud",
+        //     lang:"english",
+        //      fullname:function(){
+        //         return this.firstName+" "+this.lastName;
+        //     }
+        // }
+
+        // console.log(person.fullname);
+
+        // //----for using setter-------------------
+        // const persons={
+        //     firstName:"parvez",
+        //     lastName:"Mahmud",
+        //     language:"",
+        //     set  lang(lang) {
+        //         this.language=lang;
+        //     }
+
+        // }
+        // persons.lang = "Bangla";
+        // console.log(persons.language);
+
+        // to add a function property by get
+        const person1 = {
+            firstName : "parvez",
+            lastName : "Mahmud1",
+        };
+
+        Object.defineProperty(person1,"fullName",{
+            get:function(){
+                return this.firstName+""+this.lastName;
+            }
+        })
+        console.log(person1.fullName);
+    </script>
+    
+</body>
+</html>
