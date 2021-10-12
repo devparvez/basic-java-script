@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="functionstringi">kyr</p>
+
+
+
+    <script>
+        // const person ={
+        //     name:"parvez",
+        //     age:28,
+        //     city:"Dhaka"
+        // }
+        // const personArray = Object.values(person);
+        // for(let x of personArray){
+        //     console.log(x);
+        // }
+
+        // ---------in object function can not be stringify directly like new date to fixed this problem-------
+  const person = {
+  name: "John",
+  age: function () {return 30;}
+};
+person.age = person.age.toString();
+
+let myString = JSON.stringify(person);
+document.getElementById("functionstringi").innerHTML = myString;
+
+</script>
+    
+</body>
+</html>
