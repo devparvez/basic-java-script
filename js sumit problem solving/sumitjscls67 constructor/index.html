@@ -4,24 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructor</title>
+    <title>Prototype</title>
 </head>
 <body>
     <script>
 
-        // this is hard coding for a person
-
-        const person ={
-            firstName:"parvez",
-            lastName:"mahmud",
-            age:26,
-            fulName:function(){
-                return this.firstName+" "+this.lastName;
-            }
-        }
-        console.log(person.fulName());
-
-        //------ To use for everybody we create constructor-----
+        
+        
+        //------ To use for everybody we create constructor function to understand prototype-----
         function Person(first,last,age){
             this.first = first;
             this.last = last,
@@ -36,13 +26,24 @@
         const parvez2 = new Person("parvez2","mahmud",30);
         const parvez3 = new Person("parvez3","mahmud",30);
 
-        console.log(parvez);
-        console.log(parvez.fulName())
+        
 
-        // adding someting to constructor function
-        parvez.country = "bangladesh";
-        console.log(parvez);
-        console.log(parvez1);
+        //add something to prototype
+        Person.prototype.country = "USA";
+        //console.dir(Person)
+        console.log(parvez1.country);
+        console.log(parvez.country);
+
+        // to add something to built in function
+
+        let parvez4 = new String("parvez");
+
+        String.prototype.doingfun = function(){
+           return "i am doing fun parvez";
+        }
+        const x ="Bangladesh";
+        console.log(x.doingfun());
+        
 
 
     </script>
