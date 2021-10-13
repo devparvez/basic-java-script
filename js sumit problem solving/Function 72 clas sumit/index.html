@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+
+
+    <script>
+        //function  declearation before invoked part
+        // function sleep(){
+        //     return console.log("I am sleeping");
+        // }
+        //function is not ended with semicolon because it will be called later 
+
+        // sleep(); // jekhane excution hoy sekhane ';' dite hoy; 
+
+        //------------function ke jodi kono variable e rakha hoy tahole take function expression bole-----------
+
+        // const x = function (a, b) {return a * b};
+
+        //function expression ended with ';'
+
+       //function constructor
+    //    const myFunction = new Function("a", "b", "return a * b");
+
+    //    let z = myFunction(4, 3);
+
+       //----------Function hoisting-----------
+    //  myyFunction(5);
+    //  function myyFunction(y) {
+    //  return y * y;
+    //  }
+
+     //---selfinvoking function
+     //---------- call korbona bahir theke se nijai nijake dake tai num dite hobena----------
+
+    //  (function(){
+    //      console.log("I am parvez");
+    //  })(); //IIFE -imideatly invoked function expression
+     
+
+    //  const myfunction1 = function(x,y){
+    //     return x*y;
+    //  };
+    //  console.log(myfunction1(3,4))
+
+    //  function myfunction2(a,b){
+    //      console.log("I am not a ,b")
+    //      //return a*b;
+    //      return arguments.length;
+    //  }
+    //  const result = myfunction2(4,4)*4;
+    //  console.log(result);
+
+    // let str = myfunction2.toString();
+    // console.log(str);
+
+    //--------------class75 using " Call " function to change this .
+
+    // const person ={
+    //     fullName : function(city,country){
+    //         return this.firstName+ " " +this.lastName + city + country;
+    //     }
+    // }
+    // const person1 = {
+    //     firstName:"parvez",
+    //     lastName: "Mahmud"
+    // }
+    // const person2 = {
+    //     firstName:"Anika",
+    //     lastName:"TasNim"
+    // }
+    // console.log(person.fullName.call(person1));
+    // console.log(person.fullName.call(person2,"Dhaka","Bangladesh"))
+
+
+//Apply method updated version of call method.apply method who passed parameters of array instead of only parameters
+
+//     const person ={
+//         fullName : function(city,country,transport){
+//             return this.firstName+ " " +this.lastName +" "+ city +" "+ country +" "+ transport;
+//         }
+//     }
+//     const person1 = {
+//         firstName:"parvez",
+//         lastName: "Mahmud"
+//     }
+//     const person2 = {
+//         firstName:"Anika",
+//         lastName:"TasNim"
+//     }
+//     console.log(person.fullName.call(person1));
+//     console.log(person.fullName.apply(person2,["Dhaka","Bangladesh","Metrorail"]))
+
+
+// //----------Math.max method e apply er proyog-------------
+
+// let maxMethod = Math.max(1,2,3,4);
+// console.log (maxMethod);
+
+// Array er moddhe Math.max method apply kora "apply " er sahajje
+
+// let maxApplyMethod = Math.max.apply(null,[1,2,3,4,5]);
+
+// console.log(maxApplyMethod);
+
+//alternative to null we can use
+// Math.max.apply(Math, [1,2,3]);
+// Math.max.apply(" ", [1,2,3]);
+// Math.max.apply(0, [1,2,3]);
+
+// -------------closure of function start here-------------
+//----- niche counter Global function------
+// let counter = 0;
+
+// function add(){
+//     counter+=1;
+// }
+
+// add();
+// add();
+// add();
+// console.log(counter);
+//--- function er help charao counter ke change kora jacche niche jeta ami chachina----------
+
+// counter = 4;
+// counter++;
+// console.log(counter);
+
+// ai problem er jonno counter ke local variable hisabe bebohar korbo
+
+// function add1(){
+//     let count = 0;
+//     count+=1;
+//     return count;
+
+// }
+// add1();
+// add1();
+// add1();
+// console.log(add1());
+// console.log(add1());
+// console.log(add1());
+
+// // to solve this problem we can use nested functions
+// function add() {
+//   let counter = 0;
+//   function plus(){
+
+//       counter += 1;
+
+//     }
+//   plus();   
+//   return counter;
+// }
+//----------- but ekhane amra plus function ke bahire theke call korte parbona----------
+
+// closure function solve this problem
+function tempo(){
+   let counter = 0;
+    return function(){
+      counter += 1;
+    }
+}
+let add = tempo();//add2 is a function now
+console.dir(add);
+
+add();
+add();
+add();
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
