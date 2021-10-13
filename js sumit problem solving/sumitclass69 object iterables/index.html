@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterables</title>
+</head>
+<body>
+    <script>
+        // const numbers=[1,2,3,4,5];
+
+        // for(let i = 0;i < numbers.length;i++){
+        //     console.log(numbers[i]);
+
+        // }
+
+        // //--- by simpler syntax for of ----
+        // for(let x of numbers){
+        //     console.log(x);
+        // }
+
+        //------to understand iterator-------
+    //     const nums =[1,2,3];
+    //    console.dir(nums);
+    //     const numIterator = nums[Symbol.iterator]();
+    //     console.log(numIterator.next());
+    //     console.log(numIterator.next());
+    //     console.log(numIterator.next());
+    //     console.log(numIterator.next());
+
+        //------------Make an object  iterable--------
+
+        const myNumbers = {};
+
+        myNumbers[Symbol.iterator] = function(){
+            let n =0;
+            let done = false;
+            return {
+                next(){
+                    n+=10;
+                    if(n==100){ done = true}
+                    return{
+                        done:done,
+                        value:n
+                        
+                    }
+
+                }
+            }
+        }
+        for(let num of myNumbers){
+            console.log(num);
+        }
+
+
+ //------------- class 70 on sets--------------------------- 
+//  const letters =new Set(["a","b","c","a","b"]);
+//  letters.add("d");
+//  console.log(letters); 
+
+//  // to get set iterators
+ 
+//  console.log(letters.values());
+
+ // How to iterate on a set
+
+ const letterse = new Set(["a","b","c"]);
+
+ let setIterator = letterse.values();
+ for(let x of letterse){
+     console.log(x);
+ }
+ console.log(letterse instanceof Set);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
