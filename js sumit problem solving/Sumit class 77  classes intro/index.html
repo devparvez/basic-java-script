@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js classes</title>
+</head>
+<body>
+
+    <script>
+
+//     class Car {
+//         constructor(name, year) {
+//         this.name = name;
+//         this.year = year;
+//         }
+
+//         run(speed){
+//             console.log(this.name+" is running"+" "+ speed);
+//         }
+//     }
+
+//     const BMW = new Car("BMW-2",1990);
+//     const audi = new Car("Audi",2000)
+//     console.log(BMW);
+//     console.log(BMW.run());
+
+//    audi.run("100 km per hour")
+
+//-------------class inhertance-----------------------
+
+// class Car {
+//     constructor(brand){
+//         this.carname = brand;
+//     }
+//     present(){
+//         return 'I have a '+ " " + this.carname;
+//     }
+// }
+
+// class Model extends Car{
+//     constructor(brand,mod){
+//         super(brand);
+//         this.model = mod
+//     }
+//     show(){
+//         return this.present()+" " + "It is a " + this.model;
+//     }
+// }
+// let myCar = new Model("Ford","Mustang");
+
+// console.log(myCar.show());
+
+
+//------ Getters and setters in class-----
+
+// class Car {
+//   constructor(brand) {
+//     this.carname = brand;
+//   }
+//   get cnam() {
+//     return this.carname;
+//   }
+//   set cnam(x) {
+//     this.carname = x;
+//   }
+// }
+
+// let myCar = new Car("Ford");
+
+// console.log(myCar.cnam);
+
+// //to set the name or change the name
+// myCar.carname = "volvo";
+// console.log(myCar.cnam);
+
+//------- static method of class---------------
+// class Car {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   static hello() {
+//     return "Hello!!";
+//   }
+// }
+
+// let myCar = new Car("Ford");
+// console.log(Car.hello());
+
+// If you want to send a parameter on static method
+
+class Car {
+  constructor(name) {
+    this.name = name;
+  }
+  static hello(x) {
+    return "Hello " + x.name;
+  }
+}
+let myCar = new Car("Ford");
+console.log(Car.hello(myCar));
+
+
+
+
+
+</script>
+    
+</body>
+</html>
