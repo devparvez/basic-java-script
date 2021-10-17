@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy text generator</title>
+</head>
+<body>
+
+    <div>
+        <form action="" id="form">
+            <input type="number" id ="amount" placeholder="please input a number lessthan ten">
+            <button>Click here</button>
+        </form>
+    </div>
+    <div>
+        <article id="result"></article>
+    </div>
+
+    <script>
+        const dummyText = ['Bonbon shortbread liquorice shortbread cake brownie dragée cotton candy powder. Dragée gummi bears lollipop donut sesame snaps marshmallow tootsie roll. Tiramisu candy shortbread pastry pie. Lemon drops oat cake liquorice pastry bear claw pastry marzipan fruitcake.','Macaroon cake topping tootsie roll dessert. Chocolate sweet roll cupcake lollipop bonbon fruitcake liquorice cupcake croissant. Cake fruitcake donut dragée chocolate bar soufflé ice cream chocolate bar.',
+        'Candy canes jujubes toffee bonbon powder danish fruitcake icing halvah. Cookie jelly tiramisu bonbon jelly lollipop toffee. Gummies apple pie pudding ice cream candy canes dragée dragée.','Bonbon chocolate apple pie carrot cake muffin. Tart brownie cake cupcake lollipop. Chocolate chocolate cake marshmallow croissant chupa chups jelly tart jelly biscuit.',
+        'Bonbon chocolate apple pie carrot cake muffin. Tart brownie cake cupcake lollipop. Chocolate chocolate cake marshmallow croissant chupa chups jelly tart jelly biscuit.','Pie bonbon liquorice sugar plum sugar plum lollipop chocolate cake tootsie roll icing. Cake donut chocolate lollipop macaroon. Jelly-o topping cotton candy chocolate tart.','Candy canes marshmallow sweet cookie gummies sweet fruitcake. Candy toffee bear claw apple pie pastry toffee jelly beans. Gummies oat cake fruitcake cheesecake macaroon jelly beans soufflé. Tart donut carrot cake cheesecake cookie topping toffee cotton candy.',
+        'Brownie dragée candy canes danish cookie jelly beans. Gummi bears cookie jelly sweet icing marshmallow liquorice cupcake. Bonbon donut chocolate chocolate shortbread jelly-o.',
+        'Marshmallow caramels sweet topping tootsie roll tiramisu cookie icing danish. Tootsie roll gummi bears liquorice danish marzipan pie. Liquorice fruitcake chocolate sweet roll jelly beans chupa chups candy canes lollipop.',
+        'Cheesecake chupa chups caramels shortbread gummi bears. Apple pie chocolate cake chocolate croissant chocolate bar jelly beans chocolate cake croissant pastry. Sesame snaps topping jelly-o cookie tiramisu pastry ice cream.',
+        'Cotton candy shortbread chocolate jujubes croissant. Biscuit cupcake lemon drops pudding bonbon croissant cookie jujubes. Cake candy oat cake sugar plum gummies.'];
+
+
+        const form = document.querySelector('#form');
+        const valu = document.querySelector('#amount');
+        const result = document.querySelector('#result');
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            let number =parseInt(valu.value);
+
+            let random =Math.floor(Math.random()*dummyText.length);
+
+            if(isNaN(number) || number <= 0 || number > 9){
+                result.innerHTML = `<p>${dummyText[random]}</p>`;
+            }else{
+               const slicedArray = dummyText.slice(0,number);
+               const finalArray = slicedArray.map(function(singleText){
+                   return `<p>${singleText}</p>`;
+               }).join('');
+               result.innerHTML = finalArray;
+            }
+            
+        })
+    </script>
+    
+</body>
+</html>
